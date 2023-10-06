@@ -4,7 +4,7 @@
 /**
  * main - function entrance
  *
- * Return: returns 1 
+ * Return: returns 1
  */
 
 int main(void)
