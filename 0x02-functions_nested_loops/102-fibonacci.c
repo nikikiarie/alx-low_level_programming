@@ -7,20 +7,22 @@
 
 int main(void)
 {
-	unsigned long int t1 = 1;
-	unsigned long int t2 = 2;
-	unsigned long int n;
-	int i;
+	int n = 0;
+	long int i = 2, j = 1;
 
-	printf("%lu, ", t1);
-	for (i = 0; i < 50; i++)
+	while (n < 50)
 	{
-		printf("%lu", t2);
-		n = t1 + t2;
-		t1 = t2;
-		t2 = n;
-		if (i != 49)
-			printf(", ");
+		if (n == 0)
+			printf("%ld", j);
+		else if (n == 1)
+			printf("%ld", i);
+		else
+		{
+			i += j;
+			j = i - j;
+			printf("%ld", i);
+		}
+		++n;
 	}
 	printf("\n");
 	return (0);
