@@ -1,9 +1,8 @@
-#include "main.h"
 #include <stdio.h>
 /**
  * main - prints a square, followed by a new line
  *
- * Return: void
+ * Return: 0
  */
 int main(void)
 {
@@ -19,6 +18,8 @@ int main(void)
 			printf("Buzz");
 		else
 			printf("%d", i);
+		if (i == 100)
+			continue;
 		printf(" ");
 	}
 	printf("\n");
