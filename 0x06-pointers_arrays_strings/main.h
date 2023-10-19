@@ -12,5 +12,6 @@ char *string_toupper(char *);
 char *cap_string(char *);
 char *rot13(char *);
 char *leet(char *v);
+char *rot13(char *c);
 
 #endif
