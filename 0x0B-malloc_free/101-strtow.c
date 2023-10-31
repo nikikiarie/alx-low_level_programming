@@ -58,7 +58,7 @@ char **strtow(char *str)
 	words = wcnt(str);
 	if (words == 0)
 		return (NULL);
-	st = malloc(sizeof(char) * (words + 1));
+	st = malloc(sizeof(char *) * (words + 1));
 	if (st == NULL)
 		return (NULL);
 	for (y = 0; y < words; y++)
