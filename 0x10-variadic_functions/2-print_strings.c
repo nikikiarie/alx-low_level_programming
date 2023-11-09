@@ -6,6 +6,7 @@
  * @separator: string printed before strings
  * @n: no of strings passed
  * @...: variable no of strings
+ * Return: sum
  */
 void print_strings(const char *separator, const unsigned int n, ...)
 {
