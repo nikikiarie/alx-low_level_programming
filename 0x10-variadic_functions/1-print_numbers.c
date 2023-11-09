@@ -2,10 +2,10 @@
 #include <stdarg.h>
 #include <stdio.h>
 /**
- * sum_them_all - eturns the sum of all its parameters
- * @n: no of params
- * @...: no of params to calculate sum
- * Return: if n == 0 then 0 else sum of params
+ * print_numbers - returns the sum of all its parameters
+ * @separator: string  printed btwn numbers
+ * @n: no of int
+ * @...: variable of no
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
