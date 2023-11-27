@@ -12,7 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *b;
 
 	if (!filename)
-		return 0;
+		return (0);
 	i = open(filename, O_RDONLY);
 	if (i == -1)
 		return (0);
@@ -23,5 +23,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	a = write(STDOUT_FILENO, b, z);
 	close(i);
 	free(b);
-	return(a);
+	return (a);
 }
