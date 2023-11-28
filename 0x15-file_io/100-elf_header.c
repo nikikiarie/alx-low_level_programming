@@ -174,7 +174,7 @@ void type_p(Elf64_Ehdr h)
 			printf("EXEC (Executable file)");
 			break;
 		default:
-			printf("<unknown: %x>", a[i]);
+			printf("<unknown>: %x", a[i]);
 			break;
 	}
 	printf("\n");
@@ -187,7 +187,7 @@ void type_p(Elf64_Ehdr h)
  */
 void abiversion_p(Elf64_Ehdr h)
 {
-	printf("  ABI Version:                        %d\n", h.e_ident[EI_ABIVERSION]);
+	printf("  ABI Version:                      %d\n", h.e_ident[EI_ABIVERSION]);
 }
 /**
  * entry_p - prints ELF entry adress
@@ -202,7 +202,7 @@ void entry_p(Elf64_Ehdr h)
 	if (h.e_ident[EI_DATA] != ELFDATA2MSB)
 	{
 		i = h.e_ident[EI_CLASS] == ELFCLASS64 ? 7 : 3;
-		while(!a[i])
+		while (!a[i])
 			i--;
 		printf("%x", a[i--]);
 		for (; i >= 0; i--)
@@ -227,7 +227,7 @@ void entry_p(Elf64_Ehdr h)
  * @argv: argument vector
  * Return: 1 0n success 0 onfailure
  */
-int main (int argc, char **argv)
+int main(int argc, char **argv)
 {
 	int i;
 	ssize_t a;
@@ -244,7 +244,7 @@ int main (int argc, char **argv)
 	if (u.e_ident[0] == 0x7f && u.e_ident[1] == 'E' && u.e_ident[2] == 'L' && u.e_ident[3] == 'F')
 		printf("ELF Header:\n");
 	else
-		dprintf(STDERR_FILENO, "Not ELF file: %s\n", argv[1]),exit(98);
+		dprintf(STDERR_FILENO, "Not ELF file: %s\n", argv[1]), exit(98);
 	magic_p(u);
 	class_p(u);
 	data_p(u);
