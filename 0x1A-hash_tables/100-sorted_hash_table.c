@@ -94,6 +94,16 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		free(new);
 		return (0);
 	}
+	new->value = cpy;
+	new->next = ht->array[i];
+	ht->array[i] = new;
+	if (ht->shead == NULL)
+	{
+		new->sprev = NULL;
+		new->snext = NULL;
+		ht->shead = new;
+		ht->stail = new;
+	}
 	else if (strcmp(ht->shead->key, key) > 0)
 	{
 		new->sprev = NULL;
