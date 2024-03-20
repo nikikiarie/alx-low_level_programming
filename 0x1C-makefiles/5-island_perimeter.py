@@ -20,7 +20,7 @@ def island_perimeter(grid):
         for k in range(w):
             if grid[i][k] == 1:
                 size += 1
-                if (k > 0 and grid[i][k -1] == 1):
+                if (k > 0 and grid[i][k - 1] == 1):
                     line += 1
                 if (i > 0 and grid[i - 1][k] == 1):
                     line += 1
